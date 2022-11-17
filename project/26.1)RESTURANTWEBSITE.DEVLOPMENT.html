@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTURANT</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("realsumandeepwithsubhodeep.jpeg");
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+
+        nav {
+            width: 100%;
+            height: 80px;
+            background: rgb(255, 255, 255);
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 80px;
+            position: fixed;
+            top: 0px;
+            border-radius: 8px;
+            z-index: 1;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+
+        }
+
+        .logo {
+            font-family: sans-serif;
+            font-size: 2.5em;
+
+        }
+
+        .logo span {
+            color: rgb(247, 42, 11);
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: black;
+            padding: 10px 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .menu a:first-child {
+            color: rgb(250, 109, 8);
+        }
+
+        .menu a:hover {
+            color: rgb(250, 109, 8);
+        }
+
+        .login a {
+            color: black;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 8px;
+            background: #e74c3c;
+            padding: 5px 5px;
+            margin-left: 10px;
+        }
+
+        .login a:hover {
+            color: rgb(240, 239, 235);
+            background: orangered;
+        }
+
+        .h-text {
+            color: rgb(255, 255, 255);
+            max-width: 700px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+
+        }
+
+        h1 {
+            color: rgb(250, 133, 17);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 50px;
+            flex: auto;
+
+        }
+
+        h2 {
+            font-size-adjust: 20px;
+            font-style: italic;
+            font-family: cursive;
+            font-weight: lighter;
+        }
+
+        .h-text input {
+            background: none;
+            border-radius: 20px;
+            padding: 10px;
+            text-align: center;
+            border-color: rgb(160, 237, 6);
+            width: 400px;
+            color: rgb(232, 147, 10);
+            font-size: larger;
+            margin-top: 20px;
+
+
+        }
+
+        .h-text ::placeholder {
+            color: rgb(16, 245, 237);
+            font-size: 15px;
+
+
+        }
+
+        .member {
+            width: 100%;
+            padding: 20px 100px;
+            font-family: sans-serif;
+            color: rgb(0, 0, 0);
+            padding: 570px 10px;
+            height: 200vh;
+        }
+
+        .member-info {
+            text-align: center;
+            padding: 120px 40px;
+            width: 100%;
+
+
+        }
+
+        .member-info h1 {
+            font-size: 2.5em;
+        }
+
+        .member-info h1 span {
+            color: rgb(130, 235, 17);
+        }
+
+        .member-card img {
+            border-radius: 200px;
+
+        }
+
+        .member-card {
+            text-align: center;
+            padding-top: 10px;
+            width: 50%;
+            margin: auto;
+        }
+
+        .member-card p {
+            margin: 20px 0px;
+            line-height: 1.8em;
+        }
+
+        .member-card h2 {
+            margin: 20px 0px;
+        }
+
+        .m-images img {
+            border-radius: 0px;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+            border-radius: 20px;
+
+        }
+
+        .m-images img:hover {
+            transform: scale(1.2);
+        }
+
+        footer {
+
+            background-color: #262626;
+            width: 100%;
+            height:70vh;
+            text-align: center;
+
+            padding: 50px 100px;
+        }
+
+        .newsletter {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+        }
+
+        .newsletter>div {
+            flex-basis: 50%;
+        }
+
+        .n-text {
+            text-align: right;
+        }
+
+        .newsletter h2 {
+            font-size: 2em;
+            font-family: sans-serif;
+            color: white;
+            text-align: left;
+        }
+
+        .newsletter p {
+            font-size: 20px;
+            margin: px;
+            color: white;
+            text-align: left;
+            font-family: sans-serif;
+        }
+
+        .newsletter h2 {
+            font-style: normal;
+        }
+
+        .newsletter label {
+            position: relative;
+        }
+
+        .newsletter input {
+            padding: 20px;
+            width: 70%;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-family: sans-serif;
+        }
+
+        .newsletter button {
+            position: absolute;
+            right: 0;
+            padding: 20px;
+            width: 30%;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            outline: none;
+            border-radius: 0 8px 8px 0;
+
+
+        }
+        .f-contact{
+            color: white;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top:85%;
+            padding:0px 110px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .f-contact p{
+            line-height: 2em;
+            font-size: 20px;
+            color: grey;
+            cursor: pointer;
+        }
+        .f-contact p:hover{
+            color: orangered;
+
+        }
+        .scrolling marquee{
+            color: rgb(247, 247, 241);
+            margin-top:11%;
+            font-size: 40px;
+            font-display:flex;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .scrolling marquee span{
+            color: orangered;
+
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                Hotel<span>Suman</span>deep
+            </div>
+            <div class="menu">
+                <a href="#">HOME</a>
+                <a href="#">ABOUT</a>
+                <a href="#">BOOKING-ROOM</a>
+                <a href="#">CONTACT</a>
+            </div>
+            <div class="login">
+                <a href="17)FORM IN HTML.html">login</a>
+                <a href="#">Register</a>
+            </div>
+        </nav>
+        <div class="scrolling">
+        <marquee behavior="alternate-left" direction="margin-left">Welcome to <span>Suman</span>deep hotel and resturant </marquee>
+        
+        </div>
+        <section class="h-text">
+
+            <h1> WELLCOME TO SUMANDEEP HOTTEL AND RESTURANT </h1>
+            <h2>fresh and delicious</h2>
+            <form action="https://en.wikipedia.org/wiki/Pizza">
+            <input type="text" name="" placeholder="Search here...">
+            </form>
+        </section>
+        <div>
+            <section class="member">
+                <div class="member-info">
+                    <h1>Our-<span>Information</span></h1>
+                    <p>what our member says</p>
+
+                    <div class="member-card">
+                        <img src="PAWANJHA.1.jpeg" width="100px" height="100px">
+                        <p>
+                            Fome Jharkhand,doing gym is good for healthy life.it help our body to fit.it release stress
+                            from
+                            our mind.
+                            Eat a combination of different foods, including fruit, vegetables, legumes, nuts and whole
+                            grains. Adults should eat at least five portions (400g) of fruit and vegetables per day. You
+                            can
+                            improve your intake of fruits and vegetables by always including veggies in your meal;
+                            eating
+                            fresh fruit and vegetables as snacks; eating a variety of fruits and vegetables; and eating
+                            them
+                            in season.
+                        </p>
+                        <h2>*PAWAN JHA </h2>
+                        <img src="facebook5.png" width="100">
+                        <img src="instaicon.png" width="100">
+                        <img src="whatshap6.jpg" width="100">
+
+                    </div>
+
+                    <div class="m-images">
+                        <img src="paneer1.jfif" width="200" height="200">
+                        <img src="paneer2.jfif" width="200" height="200">
+                        <img src="paneer3.jfif" width="200" height="200">
+                        <img src="paneer4.jfif" width="200" height="200">
+                        <img src="paneer5.jfif" width="200" height="200">
+                        <img src="paneer3.jfif" width="200" height="200">
+                        <img src="roti1.jfif" width="200" height="200">
+                        <img src="roti2.jfif" width="200" height="200">
+                        <img src="roti3.jfif" width="200" height="200">
+                        <img src="roti4.jfif" width="200" height="200">
+                        <img src="roti5.jfif" width="200" height="200">
+                        <img src="roti3.jfif" width="200" height="200">
+                        <img src="fooda.jfif" width="200" height="200">
+                        <img src="foodb.jfif" width="200" height="200">
+                        <img src="foodc.jfif" width="200" height="200">
+                        <img src="foodd.jfif" width="200" height="200">
+                        <img src="foodf.jfif" width="200" height="200">
+                        <img src="foode.jfif" width="200" height="200">
+                        <img src="foodc.jfif" width="200" height="200">
+                        <img src="foodd.jfif" width="200" height="200">
+                        <img src="roti4.jfif" width="200" height="200">
+                        <img src="roti3.jfif" width="200" height="200">
+                        <img src="roti5.jfif" width="200" height="200">
+                        <img src="roti1.jfif" width="200" height="200">
+                        <img src="s6.jfif" width="200" height="200">
+                        <img src="s5.jfif" width="200" height="200">
+                        <img src="s4.jfif" width="200" height="200">
+                        <img src="s3.jfif" width="200" height="200">
+                        <img src="s2.jfif" width="200" height="200">
+                        <img src="s1.jfif" width="200" height="200">
+                        <img src="room6.jfif" width="200" height="200">
+                        <img src="room4.jfif" width="200" height="200">
+                        <img src="room5.png" width="200" height="200">
+                        <img src="room2 (2).png" width="200" height="200">
+                        <img src="room3.jfif" width="200" height="200">
+                        <img src="room1.jfif" width="200" height="200">
+                        
+                        
+                        <hr>
+                        <marquee behavior="scroll-behavior" direction="right">HI EVERY ONE WEBSITE IS MADE BY NIKHIL(INDIA)</marquee>
+                        <hr>
+                    </div>
+                </div>
+                <footer>
+                    <div class="newsletter">
+                        <div>
+                            <h2> subscribe our newsletter</h2>
+                            <p> we are a team of non-cynics who truly care for our work.</p>
+                        </div>
+                        <div class="n-text">
+                            <label>
+                                <input type="text" placeholder="Eter your email">
+                                <button>Submit</button>
+                            </label>
+                        </div>
+                    </div>
+        </div>
+        <div class="f-contact">
+            <div>
+                <h1>Information</h1>
+                <p> Lorem ipsum dolor, <br>sit amet consectetur <br>adipisicing elit.<br> Quas, sapiente ipsa.</p>
+                <i class="fa fa-whatshap"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-telegram"></i>
+                <i class="fa fa-twiter"></i>
+            </div>
+            <div>
+                <h1> Useful links</h1>
+                <p>About us</p>
+                <p>Gallery</p>
+                <p>Bog posts</p>
+                <p>Pricing plants</p>
+            </div>
+
+            <div>
+                <h1> Details</h1>
+                <p>foods</p>
+                <p>rooms</p>
+                <p>quility</p>
+                <p>pricing plans</p>
+            </div>
+            <div>
+                <h1>Help & Suport</h1>
+                <p>Privacy Policy</p>
+                <p>Term & Condition</p>
+                <p>Technical support</p>
+                <p>Customer care</p>
+            </div>
+
+
+
+        </div>
+        </footer>
+        </section>
+        </div>
+    </header>
+    </div>
+</body>
+
+</html>
